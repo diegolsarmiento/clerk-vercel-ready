@@ -1,15 +1,12 @@
-import { UserDetails } from "../components/user-details";
+import { UserDetails } from "@/components/user-details";
 import { UserButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
-import { CodeSwitcher } from "../components/code-switcher";
-import { LearnMore } from "../_template/components/learn-more";
-import { Footer } from "../_template/components/footer";
-import { ClerkLogo } from "../_template/components/clerk-logo";
-import { NextLogo } from "../_template/components/next-logo";
+import { CodeSwitcher } from "@/components/code-switcher";
+import { LearnMore } from "@/_template/components/learn-more";
+import { Footer } from "@/_template/components/footer";
 import Link from "next/link";
-
-import { DASHBOARD_CARDS } from "../_template/content/cards";
-import { DeployButton } from "../_template/components/deploy-button";
+import { DASHBOARD_CARDS } from "@/_template/content/cards";
+import { DeployButton } from "@/_template/components/deploy-button";
 
 export default async function DashboardPage() {
   await auth.protect();
@@ -22,9 +19,7 @@ export default async function DashboardPage() {
             <header className="flex items-center justify-between w-full h-16 gap-4">
               <div className="flex gap-4">
                 <div className="bg-[#F4F4F5] px-4 py-3 rounded-full inline-flex gap-4">
-                  <ClerkLogo />
-                  <div aria-hidden className="w-px h-6 bg-[#C7C7C8]" />
-                  <NextLogo />
+                  LOGO
                 </div>
                 <Link
                   href="/"
