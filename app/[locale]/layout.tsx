@@ -29,15 +29,16 @@ export default function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: "en" | "es" }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = React.use(params);
 
+  // opcional: guardrail
+  const safeLocale = locale === "es" ? "es" : "en";
+
   return (
-    <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased">
-        <ClerkProvider appearance={clerkAppearanceObject}>{children}</ClerkProvider>
-      </body>
+    <html lang={safeLocale}>
+      <body>{children}</body>
     </html>
   );
 }
