@@ -32,13 +32,15 @@ export default function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = React.use(params);
-
-  // opcional: guardrail
   const safeLocale = locale === "es" ? "es" : "en";
 
   return (
-    <html lang={safeLocale}>
-      <body>{children}</body>
-    </html>
+    <ClerkProvider appearance={clerkAppearanceObject}>
+      <html lang={safeLocale}>
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
