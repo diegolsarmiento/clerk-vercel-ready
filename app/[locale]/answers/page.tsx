@@ -7,7 +7,7 @@ export default function AnswersPage() {
   const items = getAllAnswers()
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-black">
       {items.map((item) => (
         <Link key={item.slug} href={`/en/answers/${item.slug}`}>
           <div className="border p-4 rounded">
