@@ -1,5 +1,6 @@
 @layer theme, base, clerk, components, utilities;
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-primary-600: #6c47ff;

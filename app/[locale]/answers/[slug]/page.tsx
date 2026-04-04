@@ -11,14 +11,17 @@ export async function generateStaticParams() {
     slug: file.replace('.mdx', ''),
   }))
 }
-
-export default async function AnswerPage({ params }: any) {
-  const { slug } = params
+export default async function AnswerPage({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>
+}) {
+  const { slug } = await params
 
   const Content = (await import(`@/content/answers/${slug}.mdx`)).default
 
   return (
-    <div className="prose">
+    <div className="prose prose-invert max-w-none">
       <Content />
     </div>
   )
