@@ -36,7 +36,7 @@ export function CodeSwitcher() {
             className={clsx(
               "capitalize rounded-sm h-7 text-[0.8125rem] flex-1 hover:text-black font-medium",
               selectedType === type
-                ? "bg-white shadow-xs text-black"
+                ? "bg-white shadow-xs"
                 : "text-[#5E5F6E]"
             )}
             key={type}

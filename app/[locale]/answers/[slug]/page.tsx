@@ -21,7 +21,7 @@ export default async function AnswerPage({
   const Content = (await import(`@/content/answers/${slug}.mdx`)).default
 
   return (
-    <div className="prose prose-invert max-w-none text-black">
+    <div className="prose prose-invert max-w-none">
       <Content />
     </div>
   )
